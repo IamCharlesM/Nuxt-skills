@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Skills from '~/components/skills.vue';
+import Skills from '~/components/Skills.vue';
 export default {
     name: "index",
     components: { Skills }
