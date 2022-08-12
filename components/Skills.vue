@@ -13,7 +13,11 @@
         <h1>Default Button</h1>
         <button v-on:click="changeName" v-bind:disable="btnState" class="default-button">
           Change name
-        </button></v-col
+        </button>
+        
+        {{ btnState ? 'The button is disabled' : 'The button is active'}}
+
+        </v-col
       >
       <v-col>
         <h1>Vuetify Button</h1>
