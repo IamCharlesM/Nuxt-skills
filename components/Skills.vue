@@ -5,25 +5,18 @@
         <h1>Vue</h1>
         <ul>
           <li v-for="(data, index) in skills" :key="index">
-            {{ index }}. {{ data.skill }}
+            {{ data.skill }}
           </li>
         </ul>
-        <p v-if="skills.length >= 1">You have more than 1 skill</p>
-        <p v-else>You have less than 1 skill</p>
+
+        <p>These are the skills that you possess</p>
       </v-col>
 
       <v-col>
         <h1>Vuetify</h1>
         <v-list v-for="(data, index) in skills" :key="index">
-          <v-card> {{ index }}. {{ data.skill }} </v-card>
+          <v-card class="py-5"> {{ data.skill }} </v-card>
         </v-list>
-        <v-alert dense outlined elevation="10" type="warning" v-if="skills.length >= 1">
-          <p>You have more than 1 skill</p>
-        </v-alert>
-
-        <v-alert dense outlined type="error" v-else>
-          <p>You have less than 1 skill</p>
-        </v-alert>
       </v-col>
     </v-row>
   </div>
@@ -34,17 +27,36 @@ export default {
   name: 'Skills',
   data() {
     return {
-      skills: [{ skill: 'Vue.js' }, 
-      { skill: 'Vuetify' }],
+      skills: [{ skill: 'Vue.js' }, { skill: 'Vuetify' }],
+      showAlert: true,
     }
   },
 }
 </script>
 
-<style>
-.default-button {
-  border-radius: 5%;
-  background-color: red;
-  padding: 0.2em;
+<style scoped>
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul li {
+  padding: 20px;
+  font-size: 1.3em;
+  background-color: grey;
+  border: 5px solid inherit;
+  margin-bottom: 2px;
+  color: #3e5252;
+}
+
+p {
+  text-align: center;
+  padding: 30px 0;
+  color: gray;
+}
+
+.container {
+  box-shadow: 0px 0px 40px lightgray;
 }
 </style>
