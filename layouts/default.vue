@@ -30,7 +30,12 @@
 
       <v-toolbar-title v-text="title" class=" mx-auto text-center" />
       <v-spacer />
-
+        <v-switch
+        v-model="$vuetify.theme.dark"
+        inset
+        label="Light or dark side?"
+        persistent-hint
+      ></v-switch>
     </v-app-bar>
     <v-main>
       <v-container>
