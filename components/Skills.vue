@@ -2,27 +2,22 @@
   <div class="hello">
     <v-row no-gutters>
       <v-col>
-        <v-card>
-          {{ name }}
-        </v-card>
+        <h1>Vue</h1>
+        <ul>
+          <li v-for="(data, index) in skills" :key="index">
+            {{ index }}. {{ data.skill }}
+          </li>
+        </ul>
       </v-col>
-    </v-row>
 
-    <v-row no-gutters>
       <v-col>
-        <h1>Default Button</h1>
-        <button v-on:click="changeName" v-bind:disable="btnState" class="default-button">
-          Change name
-        </button>
-        
-        {{ btnState ? 'The button is disabled' : 'The button is active'}}
-
-        </v-col
-      >
-      <v-col>
-        <h1>Vuetify Button</h1>
-        <v-btn depressed small color="primary" disabled>text</v-btn></v-col
-      >
+        <h1>Vuetify</h1>
+        <v-list v-for="(data, index) in skills" :key="index"> 
+        <v-card>
+            {{ index}}. {{ data.skill}}
+        </v-card>
+        </v-list>
+      </v-col>
     </v-row>
   </div>
 </template>
@@ -32,8 +27,7 @@ export default {
   name: 'Skills',
   data() {
     return {
-      name: 'General Skills',
-      btnState: true,
+      skills: [{ skill: 'Vue.js' }, { skill: 'Vuetify' }],
     }
   },
 }
@@ -43,6 +37,6 @@ export default {
 .default-button {
   border-radius: 5%;
   background-color: red;
-  padding: 0.2em
-  }
+  padding: 0.2em;
+}
 </style>
