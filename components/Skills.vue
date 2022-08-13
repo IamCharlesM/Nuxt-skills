@@ -45,7 +45,8 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
+
 export default {
   name: 'Skills',
   data() {
@@ -57,6 +58,7 @@ export default {
   },
   methods: {
     addSkill() {
+
       this.skills.push({ skill: this.skill })
       this.skill = ''
     },
