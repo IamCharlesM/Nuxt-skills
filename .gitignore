@@ -44,7 +44,6 @@ typings/
 # Optional npm cache directory
 .npm
 
-temp_auto_push.bat
 # Optional eslint cache
 .eslintcache
 
@@ -91,5 +90,4 @@ sw.*
 *.swp
 
 
-.gitignore
 branch_structure.json
